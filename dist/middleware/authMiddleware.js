@@ -15,6 +15,7 @@ const authMiddleware = (role) => {
         }
         try {
             const decoded = jsonwebtoken_1.default.verify(token, secretKey);
+            // console.log('Decoded Token:', decoded);
             const userRoles = decoded.roles || [];
             if (!userRoles.includes(role)) {
                 return res.status(403).json({ message: 'Access denied. Insufficient permissions.' });

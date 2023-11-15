@@ -18,7 +18,7 @@ class BookController {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const { title } = req.body;
-            const creator = (_a = req.user) === null || _a === void 0 ? void 0 : _a.username; // Use type assertion to access user property
+            const creator = (_a = req.user) === null || _a === void 0 ? void 0 : _a.username;
             try {
                 const newBook = yield bookModel_1.default.create({ title, creator });
                 res.status(201).json(newBook);
