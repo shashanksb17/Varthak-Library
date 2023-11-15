@@ -4,7 +4,7 @@ import Book from '../models/bookModel';
 class BookController {
   async createBook(req: Request, res: Response) {
     const { title } = req.body;
-    const creator = (req as any).user?.username; // Use type assertion to access user property
+    const creator = (req as any).user?.username;
 
     try {
       const newBook = await Book.create({ title, creator });
