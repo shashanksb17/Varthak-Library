@@ -21,7 +21,7 @@ const authMiddleware = (role: string) => {
 
     try {
       const decoded = jwt.verify(token, secretKey) as { username: string; roles: string[] };
-      console.log('Decoded Token:', decoded);
+      // console.log('Decoded Token:', decoded);
       const userRoles = decoded.roles || [];
 
       if (!userRoles.includes(role)) {
