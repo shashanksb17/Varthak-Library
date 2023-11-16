@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the home page!');
+});
+
 app.use('/books', bookRoutes);
 app.use('/users', userRoutes);
 
